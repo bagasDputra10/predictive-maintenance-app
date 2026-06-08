@@ -7,7 +7,7 @@ import joblib
 # =========================
 st.set_page_config(
     page_title="Predictive Maintenance",
-    page_icon="⚙️",
+    page_icon="Machine",
     layout="wide"
 )
 
@@ -63,10 +63,10 @@ model = joblib.load("best_model.pkl")
 # =========================
 # HEADER
 # =========================
-st.title("⚙️ Predictive Maintenance System")
+st.title(" - Predictive Maintenance System")
 
 st.markdown("""
-### Machine Failure Prediction using XGBoost
+### Prediksi Kegagalan Mesin dengan XGBoost
 
 Aplikasi ini digunakan untuk memprediksi potensi kegagalan mesin berdasarkan parameter operasional.
 """)
@@ -82,18 +82,18 @@ col1, col2 = st.columns(2)
 with col1:
 
     product_type = st.selectbox(
-        "Product Type",
+        "Product Type ( Variasi Kualitas Produk)",
         ["L", "M", "H"]
     )
 
     air_temp = st.number_input(
-        "Air Temperature (K)",
+        "Air Temperature (K)  = Suhu Udara",
         value=300.0,
         step=0.1
     )
 
     proc_temp = st.number_input(
-        "Process Temperature (K)",
+        "Process Temperature (K) = Suhu Proses",
         value=310.0,
         step=0.1
     )
@@ -101,18 +101,18 @@ with col1:
 with col2:
 
     rpm = st.number_input(
-        "Rotational Speed (rpm)",
+        "Rotational Speed (rpm) = Kecepatan Putaran",
         value=1500
     )
 
     torque = st.number_input(
-        "Torque (Nm)",
+        "Torque (Nm) = Torsi",
         value=40.0,
         step=0.1
     )
 
     tool_wear = st.number_input(
-        "Tool Wear (min)",
+        "Tool Wear (min) = Pemakaian Alat",
         value=50
     )
 
@@ -122,7 +122,7 @@ st.divider()
 # PREDICT BUTTON
 # =========================
 
-if st.button("🔍 Predict Failure Risk", use_container_width=True):
+if st.button("🔍 Prediksi Resiko Kegagalan", use_container_width=True):
 
     # =========================
     # ENCODING
